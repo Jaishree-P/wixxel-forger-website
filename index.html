@@ -93,120 +93,59 @@
 
 
 
-<section class="section services-journey" id="services">
-  <div class="services-header reveal reveal-bottom">
-    <span class="services-tag">What We Offer</span>
-    <h2>Our Services</h2>
-    <p>
-      Each service follows a structured journey designed
-      to deliver clarity, performance, and growth.
-    </p>
-  </div>
-
-  <div class="journey-grid">
-
-    <!-- WEBSITE DEVELOPMENT -->
-    <div class="journey-card reveal reveal-left">
-      <div class="journey-head">
-        <h3>🌐 Website Development</h3>
-        <span class="journey-label">From Idea to Launch</span>
-      </div>
-
-      <div class="journey-steps">
-        <span>Research</span>
-        <span>Design</span>
-        <span>Development</span>
-        <span>Launch</span>
-      </div>
-
-      <p class="journey-desc">
-        We build fast, modern, SEO-ready websites that
-        turn visitors into customers.
-      </p>
+    <section class="section services-journey" id="services">
+    <div class="services-header reveal reveal-bottom">
+        <span class="about-tag">Our services</span>
+        <p>
+        Each service follows a structured journey designed
+        to deliver clarity, performance, and growth.
+        </p>
     </div>
 
-    <!-- SEO -->
-    <div class="journey-card reveal reveal-right">
-      <div class="journey-head">
-        <h3>🔍 SEO Optimization</h3>
-        <span class="journey-label">From Visibility to Authority</span>
-      </div>
+    <div class="journey-grid">
 
-      <div class="journey-steps">
-        <span>Audit</span>
-        <span>Keywords</span>
-        <span>Optimization</span>
-        <span>Ranking</span>
-      </div>
+        <!-- WEBSITE DEVELOPMENT -->
+        <div class="journey-card reveal reveal-left">
+        <div class="journey-head">
+            <h3>🌐 Website Development</h3>
+            <button class="read-more-btn" onclick="openModal('website-development')">Read More</button>
+        </div>
+        </div>
 
-      <p class="journey-desc">
-        We help your business rank higher, attract organic
-        traffic, and build long-term credibility.
-      </p>
+        <!-- SEO -->
+        <div class="journey-card reveal reveal-right">
+        <div class="journey-head">
+            <h3>🔍 SEO Optimization</h3>
+            <button class="read-more-btn" onclick="openModal('seo-optimization')">Read More</button>
+        </div>
+        </div>
+
+        <!-- DIGITAL MARKETING -->
+        <div class="journey-card reveal reveal-left">
+        <div class="journey-head">
+            <h3>📈 Digital Marketing</h3>
+            <button class="read-more-btn" onclick="openModal('digital-marketing')">Read More</button>
+        </div>
+        </div>
+
+        <!-- INFLUENCER MARKETING -->
+        <div class="journey-card reveal reveal-right">
+        <div class="journey-head">
+            <h3>🤝 Influencer Marketing</h3>
+            <button class="read-more-btn" onclick="openModal('influencer-marketing')">Read More</button>
+        </div>
+        </div>
+
+        <!-- BRANDING -->
+        <div class="journey-card reveal reveal-bottom">
+        <div class="journey-head">
+            <h3>🎨 Logo & Branding</h3>
+            <button class="read-more-btn" onclick="openModal('logo-branding')">Read More</button>
+        </div>
+        </div>
+
     </div>
-
-    <!-- DIGITAL MARKETING -->
-    <div class="journey-card reveal reveal-left">
-      <div class="journey-head">
-        <h3>📈 Digital Marketing</h3>
-        <span class="journey-label">From Reach to Conversion</span>
-      </div>
-
-      <div class="journey-steps">
-        <span>Strategy</span>
-        <span>Content</span>
-        <span>Ads</span>
-        <span>Leads</span>
-      </div>
-
-      <p class="journey-desc">
-        Data-driven campaigns that attract, engage,
-        and convert your audience.
-      </p>
-    </div>
-
-    <!-- INFLUENCER MARKETING -->
-    <div class="journey-card reveal reveal-right">
-      <div class="journey-head">
-        <h3>🤝 Influencer Marketing</h3>
-        <span class="journey-label">From Trust to Impact</span>
-      </div>
-
-      <div class="journey-steps">
-        <span>Identify</span>
-        <span>Collaborate</span>
-        <span>Promote</span>
-        <span>Measure</span>
-      </div>
-
-      <p class="journey-desc">
-        Authentic influencer collaborations that
-        amplify your brand voice.
-      </p>
-    </div>
-
-    <!-- BRANDING -->
-    <div class="journey-card reveal reveal-bottom">
-      <div class="journey-head">
-        <h3>🎨 Logo & Branding</h3>
-        <span class="journey-label">From Identity to Recognition</span>
-      </div>
-
-      <div class="journey-steps">
-        <span>Discovery</span>
-        <span>Design</span>
-        <span>Refinement</span>
-        <span>Brand Kit</span>
-      </div>
-
-      <p class="journey-desc">
-        We create memorable visual identities
-        that make brands stand out.
-      </p>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
 <!-- HOW WE WORK -->
@@ -276,6 +215,14 @@
   </div>
 </section>
 
+
+<!-- SERVICE DETAILS MODAL -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>

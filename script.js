@@ -34,21 +34,80 @@ const observer = new IntersectionObserver(
 
 reveals.forEach(el => observer.observe(el));
 
+/* =========================
+   SERVICE DETAILS DATA
+========================= */
+const serviceData = {
+  'website-development': {
+    title: '🌐 Website Development',
+    subtitle: 'From Idea to Launch',
+    steps: ['Research', 'Design', 'Development', 'Launch'],
+    description: 'We build fast, modern, SEO-ready websites that turn visitors into customers.'
+  },
+  'seo-optimization': {
+    title: '🔍 SEO Optimization',
+    subtitle: 'From Visibility to Authority',
+    steps: ['Audit', 'Keywords', 'Optimization', 'Ranking'],
+    description: 'We help your business rank higher, attract organic traffic, and build long-term credibility.'
+  },
+  'digital-marketing': {
+    title: '📈 Digital Marketing',
+    subtitle: 'From Reach to Conversion',
+    steps: ['Strategy', 'Content', 'Ads', 'Leads'],
+    description: 'Data-driven campaigns that attract, engage, and convert your audience.'
+  },
+  'influencer-marketing': {
+    title: '🤝 Influencer Marketing',
+    subtitle: 'From Trust to Impact',
+    steps: ['Identify', 'Collaborate', 'Promote', 'Measure'],
+    description: 'Authentic influencer collaborations that amplify your brand voice.'
+  },
+  'logo-branding': {
+    title: '🎨 Logo & Branding',
+    subtitle: 'From Identity to Recognition',
+    steps: ['Discovery', 'Design', 'Refinement', 'Brand Kit'],
+    description: 'We create memorable visual identities that make brands stand out.'
+  }
+};
 
+/* =========================
+   MODAL FUNCTIONS
+========================= */
+function openModal(serviceId) {
+  const service = serviceData[serviceId];
+  const modal = document.getElementById('serviceModal');
+  const modalBody = document.getElementById('modalBody');
+  
+  let stepsHTML = service.steps.map(step => `<span>${step}</span>`).join('');
+  
+  modalBody.innerHTML = `
+    <h2>${service.title}</h2>
+    <span class="journey-label">${service.subtitle}</span>
+    <div class="journey-steps">
+      ${stepsHTML}
+    </div>
+    <p class="journey-desc">${service.description}</p>
+  `;
+  
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
 
+function closeModal() {
+  const modal = document.getElementById('serviceModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
 
-// Interactive Services Toggle
-const serviceItems = document.querySelectorAll(".service-item");
-const serviceContents = document.querySelectorAll(".service-content");
-
-serviceItems.forEach(item => {
-  item.addEventListener("click", () => {
-    const target = item.dataset.service;
-
-    serviceItems.forEach(btn => btn.classList.remove("active"));
-    serviceContents.forEach(content => content.classList.remove("active"));
-
-    item.classList.add("active");
-    document.getElementById(target).classList.add("active");
-  });
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+  const modal = document.getElementById('serviceModal');
+  if (e.target === modal) {
+    closeModal();
+  }
 });
+
+
+
+
+
