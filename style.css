@@ -423,11 +423,11 @@ footer {
 
 /* Default hidden */
 .reveal {
-  opacity: 0;
   transition:
-    opacity 1.1s ease,
-    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.55s ease-out,
+    transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 
 /* From bottom */
 .reveal-bottom {
@@ -451,10 +451,11 @@ footer {
 }
 
 /* Stagger delays */
-.delay  { transition-delay: 0.15s; }
-.delay2 { transition-delay: 0.3s; }
-.delay3 { transition-delay: 0.45s; }
-.delay4 { transition-delay: 0.6s; }
+.delay  { transition-delay: 0.05s; }
+.delay2 { transition-delay: 0.1s; }
+.delay3 { transition-delay: 0.15s; }
+.delay4 { transition-delay: 0.2s; }
+
 
 
 /* =========================
@@ -560,8 +561,28 @@ footer {
 /* Responsive */
 @media (max-width: 900px) {
   .timeline::before {
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center !important;
+    left: 0 !important;
+  }
+
+  .timeline-content {
+    margin: 0 auto;
+  }
+
+  .timeline-content::before {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
 
   .timeline-item {
     width: 100%;
@@ -773,5 +794,22 @@ footer {
 
   .contact-content h2 {
     font-size: 2.2rem;
+  }
+}
+
+
+/* =========================
+   SERVICES – MOBILE GRID FIX
+========================= */
+@media (max-width: 768px) {
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-grid {
+    grid-template-columns: 1fr;
   }
 }
