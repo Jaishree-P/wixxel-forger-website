@@ -16,13 +16,15 @@ window.addEventListener("scroll", () => {
    SCROLL REVEAL OBSERVER
 ========================= */
 const reveals = document.querySelectorAll(".reveal");
+let lastScrollY = 0;
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("active");
       }
     });
   },
@@ -33,6 +35,10 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach(el => observer.observe(el));
+
+window.addEventListener("scroll", () => {
+  lastScrollY = window.scrollY;
+});
 
 /* =========================
    SERVICE DETAILS DATA
@@ -67,7 +73,13 @@ const serviceData = {
     subtitle: 'From Identity to Recognition',
     steps: ['Discovery', 'Design', 'Refinement', 'Brand Kit'],
     description: 'We create memorable visual identities that make brands stand out.'
-  }
+  },
+  'digital-design-collaterals': {
+  title: '🎨 Digital Design Collaterals',
+  subtitle: 'From Message to Visual Impact',
+  steps: ['Concept', 'Design', 'Brand Alignment', 'Delivery'],
+  description: 'Professional digital creatives including invitations, social media visuals, posters, and branded marketing assets designed for clear communication and consistent brand presence.'
+}
 };
 
 /* =========================
